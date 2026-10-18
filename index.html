@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Hello world</h1>
     <a href="www.google.com">Google</a><br>
     <input type="text" placeholder="Enter your name" id="uname"><br>
-    <button id="greet">Greetings</button>
+    <button id="greet">Greetings</button><br>
+
+    <button id="colChange">Change color</button>
 
     <script>
-            let name = document.getElementById("uname");
-            let btn = document.querySelector("#greet");
+        let name = document.getElementById("uname");
+        let btn = document.querySelector("#greet");
+        let btncol = document.querySelector("#colChange");
+        let flag = false;
 
-            btn.addEventListener("click",()=>{
-                alert(`Hello Goodmorning ${name.value}`);
-            })
+        btncol.addEventListener("click", () => {
 
-           
+            if (!flag) {
+                document.body.style.backgroundColor = "#002454";
+                document.body.style.color = "white";
 
-        
+
+                flag = true;
+            }
+            else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+
+
+
+                flag = false;
+            }
+        })
+
+        btn.addEventListener("click", () => {
+            alert(`Hello Goodmorning ${name.value}`);
+        })
+
+
+
+
     </script>
 </body>
+
 </html>
